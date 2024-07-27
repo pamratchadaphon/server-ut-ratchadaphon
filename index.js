@@ -31,10 +31,12 @@ app.use('/Images', express.static('./Images'))
 const routerNewsService = require('./src/routes/newsServiceRoute');
 app.use('/newsService', routerNewsService)
 
-const port = 8080;
+// const port = 8080;
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(port, () => {
-    console.log("server running on port " + port);
-  });
-});
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(port, () => {
+//     console.log("server running on port " + port);
+//   });
+// });
+
+module.exports = app;
