@@ -23,6 +23,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/Images", express.static("./Images"));
+
 app.get("/", (req, res) => {
   res.send("This is API running");
 });
@@ -38,8 +40,6 @@ app.use("/riceCaltivation", routeRiceCaltivation);
 
 const routerIncomeExpense = require("./src/routes/incomeExpenseRoute");
 app.use("/incomeExpense", routerIncomeExpense);
-
-app.use("/Images", express.static("./Images"));
 
 const routerNewsService = require("./src/routes/newsServiceRoute");
 app.use("/newsService", routerNewsService);
