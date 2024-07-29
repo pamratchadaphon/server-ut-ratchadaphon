@@ -39,7 +39,9 @@ app.use("/riceCaltivation", routeRiceCaltivation);
 const routerIncomeExpense = require("./src/routes/incomeExpenseRoute");
 app.use("/incomeExpense", routerIncomeExpense);
 
-app.use("/Images", express.static("./Images"));
+// app.use("/Images", express.static("./Images"));
+app.use("/Images", express.static(path.join(__dirname, 'Images')));
+
 
 const routerNewsService = require("./src/routes/newsServiceRoute");
 app.use("/newsService", routerNewsService);
