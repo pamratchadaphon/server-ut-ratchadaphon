@@ -14,5 +14,4 @@ router.get('/:riceVariety_id', riceVariety.show)
 router.put('/edit1/:riceVariety_id', riceVariety.update1)
 router.put('/edit2/:riceVariety_id', riceVariety.update2)
 router.delete('/:riceVariety_id', riceVariety.delete)
-
 module.exports = router

@@ -102,7 +102,6 @@
 //   upload,
 // };
 const db = require("../models");
-
 const RiceVariety = db.RiceVariety;
 
 module.exports = {
