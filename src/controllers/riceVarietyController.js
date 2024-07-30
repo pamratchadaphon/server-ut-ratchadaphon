@@ -35,40 +35,9 @@ module.exports = {
     }
   },
 
-  async update1(req, res) {
+  async update(req, res) {
     try {
       const [updated] = await RiceVariety.update(req.body, {
-        where: { riceVariety_id: req.params.riceVariety_id },
-      });
-      if (updated) {
-        const updatedRiceVariety = await RiceVariety.findOne({
-          where: { riceVariety_id: req.params.riceVariety_id },
-        });
-        res.status(200).send(updatedRiceVariety);
-      } else {
-        res.status(404).send({ message: "Rice variety not found for update" });
-      }
-    } catch (error) {
-      res.status(500).send({ message: "Error updating rice variety", error });
-    }
-  },
-
-  async update2(req, res) {
-    try {
-      const info = {
-        precautions: req.body.precautions,
-        photosensitivity: req.body.photosensitivity,
-        water_requirement: req.body.water_requirement,
-        yield: req.body.yield,
-        name: req.body.name,
-        stability: req.body.stability,
-        height: req.body.height,
-        feature: req.body.feature,
-        age: req.body.age,
-        type: req.body.type,
-      };
-
-      const [updated] = await RiceVariety.update(info, {
         where: { riceVariety_id: req.params.riceVariety_id },
       });
       if (updated) {
