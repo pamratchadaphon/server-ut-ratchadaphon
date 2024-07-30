@@ -68,7 +68,7 @@ module.exports = {
       feature: req.body.feature,
       age: req.body.age,
       type: req.body.type,
-      image: req.body.image,
+      image: req.file.path,
     };
     await RiceVariety.update(info, {
       where: { riceVariety_id: req.params.riceVariety_id },
