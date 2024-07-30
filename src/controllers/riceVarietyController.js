@@ -105,7 +105,7 @@ const db = require("../models");
 const RiceVariety = db.RiceVariety;
 
 module.exports = {
-  create: async (req, res) => {
+  async create(req, res) {
     try {
       const info = {
         precautions: req.body.precautions,
@@ -128,7 +128,7 @@ module.exports = {
     }
   },
 
-  index: async (req, res) => {
+  async index(req, res) {
     try {
       const riceVariety = await RiceVariety.findAll();
       res.status(200).send(riceVariety);
@@ -137,7 +137,7 @@ module.exports = {
     }
   },
 
-  show: async (req, res) => {
+  async show(req, res) {
     try {
       const riceVariety = await RiceVariety.findOne({
         where: { riceVariety_id: req.params.riceVariety_id },
@@ -152,7 +152,7 @@ module.exports = {
     }
   },
 
-  update1: async (req, res) => {
+  async update1(req, res) {
     try {
       const info = {
         precautions: req.body.precautions,
@@ -177,7 +177,7 @@ module.exports = {
     }
   },
 
-  update2: async (req, res) => {
+  async update2(req, res) {
     try {
       const info = {
         precautions: req.body.precautions,
@@ -201,7 +201,7 @@ module.exports = {
     }
   },
 
-  delete: async (req, res) => {
+  async delete(req, res) {
     try {
       await RiceVariety.destroy({
         where: { riceVariety_id: req.params.riceVariety_id },
